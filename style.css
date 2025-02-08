@@ -1,0 +1,303 @@
+/* General Styles */
+.design-table {
+  margin-left: 250px;
+  margin-right: 250px;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0; /* Ensure no global padding */
+  background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+  color: #333;
+  animation: fadeIn 1s ease-out;
+}
+
+header {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: #fff;
+  padding: 40px 20px;
+  text-align: center;
+  border-bottom: 3px solid #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  animation: slideDown 0.7s ease-out;
+  position: relative;
+  width: 100%;
+  left: 0;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.8rem;
+  letter-spacing: 2px;
+  animation: bounceIn 1s ease-out;
+}
+
+header p {
+  margin: 10px 0 0;
+  font-size: 1.2rem;
+}
+
+main {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  animation: fadeInMain 1s ease-in-out;
+}
+
+.main {
+  margin-top: 20px;
+}
+
+section {
+  margin-bottom: 40px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  color: #333;
+  border-bottom: 2px solid #6a11cb;
+  padding-bottom: 10px;
+  font-size: 2.2rem;
+}
+
+h3 {
+  color: #555;
+  margin-top: 20px;
+  font-size: 1.5rem;
+}
+
+/* Card Styles */
+.card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  animation: slideUp 0.5s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card i {
+  font-size: 1.7rem;
+  margin-right: 15px;
+  color: #6a11cb;
+  transition: color 0.3s;
+}
+
+.card a {
+  color: #333;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.card a:hover {
+  color: #2575fc;
+}
+
+/* Footer Styles */
+footer {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  font-size: 0.9rem;
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+  left: 0;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInMain {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-50px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Mobile Optimization */
+@media screen and (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  .design-table {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  footer p {
+    font-size: 0.8rem;
+  }
+}
+
+/* Dark mode toggle button */
+#darkModeToggle {
+  position: absolute;
+  top: 15px;
+  right:50px;
+  background: transparent;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #fff;
+  transition: transform 0.3s ease-in-out, color 0.3s;
+}
+
+.dark-mode #darkModeToggle {
+  color: #fff;
+}
+
+#darkModeToggle:hover {
+  transform: scale(1.2);
+}
+
+/* Dark mode styles */
+.dark-mode {
+  background: #1e1e1e;
+  color: #f5f5f5;
+}
+
+.dark-mode header {
+  background: linear-gradient(135deg, #111, #444);
+  border-bottom: 3px solid #666;
+}
+
+.dark-mode footer {
+  background: linear-gradient(135deg, #111, #444);
+}
+
+/* Dark Mode - Fix Cards */
+.dark-mode .card {
+  background: #333; /* Darker Gray */
+  box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+}
+
+/* Dark Mode - Make Icons White */
+.dark-mode .card i {
+  color: #fff;
+}
+
+.dark-mode h2 {
+  color: #ddd;
+  border-bottom: 2px solid #f39c12;
+}
+
+.dark-mode h3 {
+  color: #bbb;
+}
+
+body {
+  transition: background 0.5s, color 0.5s;
+}
+
+.dark-mode .card a {
+  color: #ddd; /* Light Gray */
+}
+
+.dark-mode .card a:hover {
+  color: #f39c12; /* Gold for contrast */
+}
+.dark-mode section {
+  background: #2a2a2a; /* Dark Gray */
+  color: #f5f5f5; /* Light Text */
+}
+/* Smooth transition for the dark mode toggle button */
+#darkModeToggle i {
+  transition: transform 0.5s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+/* Add rotation and fade effect */
+.dark-mode #darkModeToggle i {
+  transform: rotate(360deg);
+  opacity: 0.8;
+}
+
+.download-button {
+    background: #6a11cb;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+  }
+  
+  .download-button:hover {
+    background: #2575fc;
+  }
